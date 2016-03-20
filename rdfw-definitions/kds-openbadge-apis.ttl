@@ -214,24 +214,6 @@ obi:IssuerApi a kds:ApiClass;
 	#	kds:apiFieldName "revocationList";
 	#].
 	
-obi:OrganizationImageApi a kds:ApiClass;
-	rdfs:label "Badge Definition";
-	rdfs:comment "This api returns an open badge image.";
-	kds:apiInstructions [
-		kds:apiMethod "GET";
-		kds:lookupClassUri schema:Organization;
-		kds:lookupPropertyUri schema:alternativeName;
-		kds:apiUrl "issuer";
-		kds:apiUrlExtension "png";
-		kds:returnType "file";
-		kds:mimeType "image/png"
-	];
-	kds:hasProperty [
-		kds:propUri schema:image;
-		kds:classUri schema:Organization;
-		kds:apiFieldName "image";
-	].
-
 obi:AssertionImageApi a kds:ApiClass;
 	rdfs:label "Assertion Image";
 	rdfs:comment "This api returns an open badge assertion image.";

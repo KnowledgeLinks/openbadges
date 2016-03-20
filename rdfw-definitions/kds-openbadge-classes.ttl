@@ -29,27 +29,6 @@ obi:Assertion a rdf:Class;
 		acl:mode acl:Read
 	] .
 	
-rdf:Class kds:storageType "object" ;
-	a kds:ControlledClass .
-
-schema:Organization a rdf:Class;
-	a kds:ControlledClass ;
-	kds:storageType "object";
-	kds:primaryKey schema:name;
-	kds:jsonDefault [
-		kds:jsonObjName "org";
-		kds:jsonValFormat "lookup";
-		kds:lookupReturnField schema:name
-	] .
-	
-schema:ImageObject a rdf:Class;
-	a kds:ControlledClass ;
-	kds:storageType "object".
-	
-schema:URL a rdf:Class;
-	a kds:ControlledClass ;
-	kds:storageType "literal".
-	
 obi:BadgeClass a rdf:Class;
 	a kds:ControlledClass ;
 	kds:storageType "object";
@@ -61,20 +40,3 @@ obi:BadgeClass a rdf:Class;
 		kds:jsonValFormat "lookup";
 		kds:lookupReturnField schema:name
 	] .
-	
-kds:UserClass a kds:ControlledClass ;
-	kds:storageType "object" ;
-	kds:primaryKey kds:hasPerson.
-	
-kds:UserGroup kds:primaryKey schema:name ;
-	kds:saveLocation "triplestore" ;
-	kds:subjectCalc "slugify(schema:name)" .
-	
-kds:PasswordClass a kds:ControlledClass;
-	kds:storageType "object" .
-
-
-schema:Person a kds:ControlledClass ;
-	kds:storageType "object";
-	kds:primaryKey schema:email.
-	
